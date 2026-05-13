@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class cajaCollision : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,9 @@ public class cajaCollision : MonoBehaviour
 	    if(col.gameObject.CompareTag("Caja"))
 	     {
 		    col.gameObject.GetComponent<cajaSpawner>().LocateBoxAtRandomPosition();	
+
+            // aumenta velocidad de la caja
+            col.gameObject.GetComponent<cajaMovement>().speed += 0.005f;
 	     }
     }
 }
