@@ -7,6 +7,8 @@ public class cajaMovement : MonoBehaviour
 
     public float speed;
 
+    public gameTimer timer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,4 +21,14 @@ public class cajaMovement : MonoBehaviour
         transform.Translate(0, -speed, 0);
     }
 
+
+    void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.CompareTag("Player"))
+        {
+            speed = 0f;
+
+            timer.gameOver = true;
+        }
+    }
 }

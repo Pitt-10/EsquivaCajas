@@ -9,10 +9,15 @@ public class gameTimer : MonoBehaviour
 
     float tiempo = 0f;
 
+    public bool gameOver = false;
+
     void Update()
     {
-        tiempo += Time.deltaTime;
+        if(gameOver == false)
+        {
+            tiempo += Time.deltaTime;
 
-        timerText.text = tiempo.ToString("F2");
+            timerText.text = tiempo.ToString("F2");
+        }
     }
 }
